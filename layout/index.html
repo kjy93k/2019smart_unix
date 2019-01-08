@@ -6,6 +6,7 @@
   <meta name="Keywords" content="">
   <meta name="Description" content="">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <title>layout</title>
 	<link rel="stylesheet" href="../css/reset.css">
 	<style>
@@ -14,6 +15,15 @@
 	.container.bg-gray{background-color: lightgray;}
 	.container.bg-skyblue{background-color: skyblue;}
 	.row{padding: 5px;margin: 0 auto;}
+/* .row.w1000{width: 1000px;}
+	.row:after{content: "";display: block;clear: both;}
+	.row div[class*="span"]{float: left;margin-left: 2%;}
+	.row div[class*="span"]:first-child{margin-left: 0;}
+	.span_6{width: 49%;}
+	.span_4{width: 32%;}
+	.span_3{width: 23.5%;} */
+
+	@media(min-width: 769px){
 	.row.w1000{width: 1000px;}
 	.row:after{content: "";display: block;clear: both;}
 	.row div[class*="span"]{float: left;margin-left: 2%;}
@@ -21,6 +31,23 @@
 	.span_6{width: 49%;}
 	.span_4{width: 32%;}
 	.span_3{width: 23.5%;}
+	}
+	@media(min-width: 576px) and (max-width: 768px){
+	.row.w1000{width: 95%;}
+	.row:after{content: "";display: block;clear: both;}
+	.row div[class*="span"]{float: left;margin-left: 2%;margin-bottom: 10px;}
+	.row div[class*="span"]:first-child,.row div[class*="span"]:nth-child(3){margin-left: 0;}
+	.span_6,
+	.span_4,
+	.span_3{width: 49%;} 
+	.md_vnone{display: none;}
+	}
+	@media(max-width: 575px){
+	.row{padding: 10px;}
+	.row div{margin-bottom: 10px;}
+	.mo_vnone{display: none;}
+	}
+
 	/* card */
 	.card{border: 1px solid #ddd;border-radius: 10px;background-color: #fff;}
 	.card-img-top{border-radius: 10px 10px 0 0;}
@@ -51,7 +78,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="span_6">
+			<div class="span_6 mo_vnone">
 				<div class="card">
 					<img src="../images/testimg.jpg" alt="card image" class="card-img-top">
 					<div class="card-body">
@@ -75,7 +102,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="span_4">
+			<div class="span_4 mo_vnone">
 				<div class="card">
 					<img src="../images/testimg.jpg" alt="card image" class="card-img-top">
 					<div class="card-body">
@@ -85,7 +112,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="span_4">
+			<div class="span_4 md_vnone mo_vnone">
 				<div class="card">
 					<img src="../images/testimg.jpg" alt="card image" class="card-img-top">
 					<div class="card-body">
@@ -109,7 +136,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="span_3">
+			<div class="span_3 mo_vnone">
 				<div class="card">
 					<img src="../images/testimg.jpg" alt="card image" class="card-img-top">
 					<div class="card-body">
@@ -119,7 +146,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="span_3">
+			<div class="span_3 mo_vnone">
 				<div class="card">
 					<img src="../images/testimg.jpg" alt="card image" class="card-img-top">
 					<div class="card-body">
@@ -129,7 +156,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="span_3">
+			<div class="span_3 mo_vnone">
 				<div class="card">
 					<img src="../images/testimg.jpg" alt="card image" class="card-img-top">
 					<div class="card-body">
