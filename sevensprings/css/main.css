@@ -1,4 +1,9 @@
 @charset "utf-8";
 #container{/* background-color: #f5f2ec; */}
-.bx-wrapper{border: none;box-shadow: none;background: none;}
-.bx-wrapper img{width: 100%;}
+.main-visual-wrap .bx-wrapper{border: none;box-shadow: none;background: none;}
+.main-visual-wrap .bx-wrapper img{width: 100%;}
+.main-visual-wrap .bx-wrapper .bx-pager.bx-default-pager a{width: 70px;border-radius:3px;height:8px;margin: 0 10px;}
+.main-visual-wrap .bx-wrapper .bx-pager{padding-top: 0;bottom: 20px;text-align: center;}
+.main-visual-wrap .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager{width: 100%; text-align: center;}
+.main-visual-wrap .bx-wrapper .bx-pager.bx-default-pager a, .main-visual-wrap .bx-wrapper .bx-pager.bx-default-pager a:hover{background-color: #fff;}
+.main-visual-wrap .bx-wrapper .bx-pager.bx-default-pager a.active, .main-visual-wrap .bx-wrapper .bx-pager.bx-default-pager a:focus{background-color: #d9442b;}
