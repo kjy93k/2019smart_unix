@@ -7,10 +7,23 @@
   <meta name="Description" content="">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Roboto" rel="stylesheet">
-  <link rel="stylesheet" href="css/common.css">
+	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Roboto" rel="stylesheet">
+	<link rel="stylesheet" href="../css/jquery.bxslider.css">
+	<link rel="stylesheet" href="css/common.css">
 	<title>SEVEN SPRINGS</title>
 	<link rel="stylesheet" href="css/main.css">
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script src="../js/jquery.bxslider.js"></script>
+	<script>
+	$(document).ready(function(){
+		$('.main-visual').bxSlider({
+			auto: true,
+			autoControls: true,
+			stopAutoOnClick: true,
+			pager: true,
+		});
+	});
+	</script>
  </head>
  <body>
  <div class="skipmenu"><a href="container">본문 바로가기</a></div>
@@ -73,8 +86,8 @@
  <!-- //header -->
  <!-- container -->
 	<div id="container">
-		<div class="main-visual">
-			<ul>
+		<div class="main-visual-wrap">
+			<ul class="main-visual">
 				<li><a href="#"><img src="images/main/main-1.png" alt=""></a></li>
 				<li><a href="#"><img src="images/main/main-2.png" alt=""></a></li>
 				<li><a href="#"><img src="images/main/main-3.png" alt=""></a></li>
