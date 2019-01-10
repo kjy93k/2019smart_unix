@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <meta http-equiv="X-UA-compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <script src="../js/jquery-3.3.1.min.js"></script>
+  <style>
+	#panel{width: 600px;height: 300px;margin: 0 auto;border: 1px solid #999;position: relative;overflow: hidden;}
+	.bar{width: 500px;height: 20px;position: absolute;left: 50px;top: 190px;background: #f00;}
+	#car{position: absolute;left: 50px;top: 120px;}
+  </style>
+  <script>
+	$(document).ready(function(){
+		//부모자를 기준으로 움직이는걸 지역좌표,전체영역을 기준으로 하는 것을 전역좌표라고 함
+		var $car = $('#car');
+		$('#move').click(function(){
+			var $currentX = $car.position().left+25;//부모자 안에서의 좌표
+			//var $currentX = $car.offset().left;//전체 브라우저 안에서의 좌표
+			console.log($currentX);
+			$car.css('left',$currentX).animate();
+	})	;
+	});
+  </script>
+ </head>
+ <body>
+	<div id="panel">
+		<div class="bar">
+		</div>
+		<img src="../images/car01.gif" alt="자동차아아" id="car">
+	</div>
+	<button id="move">이동</button>
+ </body>
+</html>
