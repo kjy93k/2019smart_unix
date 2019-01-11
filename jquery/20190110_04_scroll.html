@@ -20,6 +20,19 @@
 			$('html,body').animate({scrollTop:0},1000);
 		});
 	});
+	$(window).on('resize',function(){
+		showInfo();//ready(f)에 넣으면 처음부터 값이 출력되고  resize에 넣으면 사이즈 조절 전에는 strInfo가 출력되지 않음
+	});
+	function showInfo(){
+		var strInfo = '$(document).width() ='+$(document).width()+'<br>';
+		strInfo += '$(document).height() ='+$(document).height()+'<br>';//document의 높이값과 너비값은 스크롤이 있을 때 값이 스크롤에 의해 지정됨 스크롤이 없을때만 값이 변함
+		$('#info').html(strInfo);
+	};
+	$(window).on('scroll',function(){//document 안에 있어도 되고 밖에 있어도 됨
+		//var scrollY = $('html,body').scrollTop();//scroll과 관련된 값
+		var scrollY = window.pageYOffset;//window와 관련된 값 위와 값 동일
+		console.log(scrollY);
+	});
   </script>
  </head>
  <body>
