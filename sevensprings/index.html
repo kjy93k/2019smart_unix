@@ -23,6 +23,11 @@
 			pager: true,
 		});
 	});
+	var e = document.getElementById('btn');
+	e.addEventListener('click', function() {
+	if (this.className == 'on') this.classList.remove('on');
+	else this.classList.add('on');
+});
 	</script>
  </head>
  <body>
@@ -93,9 +98,9 @@
 				<li><a href="event.html"><img src="images/main/main-3.png" alt=""></a></li>
 			</ul>
 		</div>
-		<div class="content-1-wrap">
-			<div class="content-1">
-				<div class="content-1-txt">
+		<div class="content-1-wrap content-wrap">
+			<div class="content-1 content">
+				<div class="content-txt">
 					<h2>BRAND STORY</h2>
 					<p>올겨울도 세븐스프링스와 함께하세요</p>
 				</div>
@@ -121,9 +126,75 @@
 				</ul>
 			</div>
 		</div>
-		<div class="content-2-wrap">
-			<img src="images/main/content-2.png" alt="">
-			<p>먹고 싶은 음식을 내마음대로</p>
+		<div class="content-2-wrap content-wrap">
+			<div class="content-2 content">
+				<div class="content-txt">
+					<h2>셰프 추천 메뉴</h2>
+					<p>더욱 더 특별한 외식을 만들어보세요</p>
+				</div>
+				<ul>
+					<li>
+						<div class="content-2-inner">
+							<div class="content-2-txt-wrap1">
+								<h3>셰프의 첫번째 추천 요리</h3>
+								<h3>live-barbecue</h3>
+							</div>
+							<div class="content-2-txt-wrap2">
+								<button class="ct2Btn">view<span></span><span></span><span></span></button>
+								<p>바로 구워 자리로 제공하는 바베큐 플래터</p>
+								<p>한번도 안먹어본 사람은 있어도 한번만 먹어본 사람은 없다는 세븐스프링스의 명물</p>
+								<p>무제한 리필 행사가 진행중인 만큼 안먹어볼 순 없겠죠?</p>
+								<a href="#">more</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="content-2-inner">
+							<div class="content-2-txt-wrap1">
+								<h3>셰프의 세번째 추천 요리</h3>
+								<h3>bakery-buffet</h3>
+							</div>
+							<div class="content-2-txt-wrap2">
+								<button class="ct2Btn">view<span></span><span></span><span></span></button>
+								<p>따끈따끈 갓 나온 베이커리로 가득</p>
+								<p>유명 호텔의 셰프님들이 만들어서 더욱 기대되고</p>
+								<p>후기가 증명해주는 베이커리 뷔페 함께 즐겨보세요</p>
+								<a href="#">more</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="content-2-inner">
+							<div class="content-2-txt-wrap1">
+								<h3>셰프의 두번째 추천 요리</h3>
+								<h3>sushi-buffet</h3>
+							</div>
+							<div class="content-2-txt-wrap2">
+								<button class="ct2Btn">view<span></span><span></span><span></span></button>
+								<p>사랑하는 사람, 사랑하는 가족과 함께</p>
+								<p>달달한 분위기에 스시뷔페 더해보기</p>
+								<p>스시를 좋아하지 않는 사람을 위해 더해지는 특별 메뉴 구경해보세요</p>
+								<a href="#">more</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="content-2-inner">
+							<div class="content-2-txt-wrap1">
+								<h3>셰프의 네번째 추천 요리</h3>
+								<h3>dessert</h3>
+							</div>
+							<div class="content-2-txt-wrap2">
+								<button class="ct2Btn">view<span></span><span></span><span></span></button>
+								<p>디저트 배는 따로 있다구요</p>
+								<p>배불리 잘 먹었다면 이번엔 디저트를 즐겨보세요</p>
+								<p>디저트와 함께 사랑하는 사람에게 서프라이즈 이벤트 어떠신가요?</p>
+								<a href="#">more</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
 		</div>
 
 	</div>
