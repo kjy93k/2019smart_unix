@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <meta http-equiv="X-UA-compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width">
+  <title>Document</title>
+   <link rel="stylesheet" href="../css/reset.css">
+   <style>
+      .clearfix:after{content:""; display: block; clear: both;}
+      .wrap{width: 1000px; margin: 50px auto;}
+      .section{width: 100%;}
+      .banner{width: 100%; height: 400px; position: relative;overflow: hidden;}
+      .banner > ul{width: 5000px; position: absolute;}
+      .banner > ul > li{float: left; width: 1000px;}
+      .banner div.btn{width: 100%; position: absolute; background-color: #fff; text-align: center; bottom: 20px;cursor: pointer;}
+			.banner div.pager{width: 100%;position: absolute;bottom: 50px;text-align: center;color: #fff;cursor: pointer;}
+   </style>
+	 <script src="../js/jquery-3.3.1.min.js"></script>
+	 <script>
+		$(function(){
+			var $current=0;
+			var $liwidth=$('.banner > ul>li').width(); 
+			var $bu=$('.banner > ul');
+			var clickInterval;
+			$('#bt_next').click(function(){
+				if ($current<4){
+					$current++;
+				} else{
+					$current=0;
+				}
+				listMove();
+				pagerColor();
+			});
+			$('#bt_prev').click(function(){
+				if ($current>0){
+				$current--;
+				} else{
+					$current=4;
+				}
+				listMove();
+				pagerColor();
+			});
+			$('.pager .bts').click(function(){
+				var $tn = $(this).index();
+				console.log($tn);
+				$current=$tn;
+				listMove();
+				pagerColor();
+			});
+			$('.banner').on({
+				mouseover: function(){
+					clearInterval(clickInterval);
+				},
+				mouseout: function(){
+					timer();
+				}
+			});
+			function timer(){
+				clickInterval = setInterval(function(){
+					$('#bt_next').trigger('click');
+				},3000);
+			}
+			function listMove(){
+				var $tl=$liwidth*$current*-1;
+				$bu.stop().animate({left:$tl}/*,function(){$('.pager .bts').css('color','#fff').eq($current).css('color','red');}*/);
+			}
+			
+			function pagerColor(){
+				$('.pager .bts').css('color','#fff').eq($current).css('color','red');
+			}
+		});
+	 </script>
+		</head>
+	 <body>
+		 <div class="wrap">
+				<div class="section">
+					 <div class="banner">
+							<ul class="clearfix">
+								 <li><img src="../images/images01.jpg" alt="img1"></li>
+								 <li><img src="../images/images02.jpg" alt="img2"></li>
+								 <li><img src="../images/images03.jpg" alt="img3"></li>
+								 <li><img src="../images/images04.jpg" alt="img4"></li>
+								 <li><img src="../images/images05.jpg" alt="img5"></li>
+							</ul>
+							<div class="btn">
+							<span id="bt_prev">이전</span>
+							<span id="bt_next">이후</span>
+							</div>
+							<div class="pager">
+								<span class="bts" style="color: #f00;">♥</span>
+								<span class="bts">♥</span>
+								<span class="bts">♥</span>
+								<span class="bts">♥</span>
+								<span class="bts">♥</span>
+							</div>
+					 </div>
+				</div>
+		 </div>
+	 </body>
+	</html>
