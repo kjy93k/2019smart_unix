@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>title</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<style>
+		.sky{width: 100%;height: 3700px;background: url(../images/bg1.png) 50% 0;position: relative;overflow: hidden;}		
+		.sky article{position: absolute;top: 150px;left: 40%;}
+	</style>
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script>
+		$(function(){
+			$('section[data-type="background"]').each(function(){
+				var bg  =$(this);
+				$(window).scroll(function(){
+					var yPos = -($(window).scrollTop() / bg.data('speed'));
+					var y2Pos = ($(window).scrollTop()*1.2);
+					console.log('scroll: '+$(window).scrollTop()+'/'+'bg: '+yPos);
+					var coords='50%'+yPos+'px';
+					var coords2=y2Pos+'px';
+					bg.css({backgroundPosition:coords});
+					$('article').css({top:coords2});
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+	<section class="sky" data-type="background" data-speed="0.5">
+		<article>
+			<img src="../images/balloon.png" alt="">
+		</article>
+	</section>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique quibusdam alias suscipit quos esse officia magnam harum, neque ut dolorem id amet libero accusamus nemo, ab deleniti sunt perferendis veniam pariatur natus, odit. Saepe facilis enim numquam, quasi, quo possimus error magni officiis molestias dolor placeat ullam sed impedit perspiciatis sit consectetur ea, doloremque. Dolor mollitia amet numquam repellendus, reprehenderit distinctio. Minima magnam perferendis pariatur obcaecati libero, veritatis a incidunt eum, mollitia dolore explicabo voluptate officia ducimus repellat, praesentium quod inventore harum. Id magni, omnis, animi blanditiis necessitatibus eaque ex ratione tempora doloribus incidunt ut rem vero possimus. Sint dolores, atque magnam a accusamus maiores dicta laboriosam odio architecto non doloremque, assumenda quisquam ea aliquid similique? Suscipit velit, saepe assumenda, omnis deleniti deserunt dignissimos. Voluptatum consectetur cumque, laboriosam minus impedit doloremque repudiandae culpa esse voluptates. Tempore ipsam voluptas ut debitis ratione fugiat. Perspiciatis recusandae soluta totam id aperiam ex iure in dignissimos aliquam doloremque, ullam laborum sint nulla itaque atque, nihil, numquam quo quae provident earum velit veritatis laboriosam praesentium, libero debitis. Eius, qui quae in minima, ea perferendis neque excepturi consectetur similique soluta. Hic, architecto, accusantium dolore quasi atque corporis quis unde fuga eum voluptate ipsam eaque expedita ea.
+		<section class="sky" data-type="background" data-speed="0.5">
+		<article>
+			<img src="../images/balloon.png" alt="">
+		</article>
+	</section>
+</body>
+</html>
