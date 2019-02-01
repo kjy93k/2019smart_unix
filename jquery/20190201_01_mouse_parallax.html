@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>parallax</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/animate.css">
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script src="../js/jquery.parallax-scroll.js"></script>
+	<style>
+		.clearfix:after{content: '';display: block;clear: both;}
+		nav#navi{position: fixed;height: 50px;width: 100%;background-color: #000; z-index: 1;}
+		nav#navi a{color: #fff;}
+		nav#navi h1{width: 150px;text-align: center;line-height: 50px;}
+		nav#navi h1{float: left;}
+		nav#navi ul.main-nav{float: left;}
+		nav#navi ul.main-nav li{float: left;}
+		nav#navi ul.main-nav li a{display: block;line-height: 50px;padding: 0 20px;}
+
+		.scene{height: 100vh;background-size: cover;background-attachment: fixed;box-shadow: 0 0 50px #000;}
+		.scene.one{background: url(../images/pc01.jpg) 50% 0 no-repeat;background-size: cover;}
+		.scene.two{background: url(../images/pc02.jpg) 50% 0 no-repeat;background-size: cover;}
+		.scene.three{background: url(../images/pc03.jpg) 50% 0 no-repeat;background-size: cover;}
+
+		.scene header {max-width: 80%;color: #fff;position: relative;text-align: center;top: 50%;transform:translate(-50%);font-size: 1.5rem;opacity: 0;margin: 0 auto;}
+		.scene header h1{margin-bottom: 1rem;}
+		.scene header h1:after{content: '';display: block;border-bottom: 1px solid #fff;width: 8rem;margin: 0 auto;margin-top: 1rem;}
+	</style>
+	<script>
+		$(function(){
+			$('.scene').parallaxScroll({
+				friction:0.3
+			});
+			// setTimeout(function () {
+			// 	$(window).resize()
+			// },100);
+			$('.scroll').click(function(e){
+				e.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},500);
+				$('.scroll').css('background-color','black');
+				$(this).css('background-color','orange');
+			});
+			var $ms2t =$('#ms2').offset().top;
+			var $ms3t =$('#ms3').offset().top;
+			$('.main-nav li').eq(0).css('background-color','orange');
+			$('#ms1 header').addClass('animated fadeInRight');
+			$(window).scroll(function(){
+				var $pt = window.pageYOffset;
+				if ($pt>=$ms3t){
+					$('.main-nav li a').css('background-color','black');
+					$('.main-nav li a').eq(2).css('background-color','orange');
+				} else if ($pt>=$ms2t){
+					$('.main-nav li a').css('background-color','black');
+					$('.main-nav li a').eq(1).css('background-color','orange');
+				} else {
+					$('.main-nav li a').css('background-color','black');
+					$('.main-nav li a').eq(0).css('background-color','orange');
+				}
+			
+				if ($pt>=($ms3t-300)){
+					$('header').removeClass('animated fadeInUp fadeInLeft fadeInRight');
+					$('#ms3 header').addClass('animated fadeInLeft');
+				} else if ($pt>=($ms2t-300)){
+					$('header').removeClass('animated fadeInUp fadeInLeft fadeInRight');
+					$('#ms2 header').addClass('animated fadeInUp');
+				} else if($pt==0){
+					$('header').removeClass('animated fadeInUp fadeInLeft fadeInRight');
+			$('#ms1 header').addClass('animated fadeInRight');
+					
+				}
+			});
+		});
+
+	</script>
+</head>
+<body>
+	<nav id="navi" class="clearfix">
+		<h1><a href="#">company</a></h1>
+		<ul class="main-nav clearfix">
+			<li><a href="#ms1" class="scroll">menu1</a></li>
+			<li><a href="#ms2" class="scroll">menu2</a></li>
+			<li><a href="#ms3" class="scroll">menu3</a></li>
+		</ul>
+	</nav>
+	<section id="ms1" class="scene one" data-width="1900" data-height="600">
+		<header>
+			<h1>Lorem ipsum dolor sit amet.</h1>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, perspiciatis?
+		</header>
+	</section>
+	<section id="ms2" class="scene two" data-width="1900" data-height="600">
+		<header>
+			<h1>Et rerum deleniti deserunt pariatur.</h1>
+			Voluptatem impedit recusandae eum reiciendis, repellat fugiat ratione! Reiciendis, quaerat.
+		</header>
+	</section>
+	<section id="ms3" class="scene three" data-width="1900" data-height="600">
+		<header>
+			<h1>Non asperiores similique velit nobis!</h1>
+			Expedita ullam veniam doloribus incidunt repudiandae, quidem quia omnis quisquam!
+		</header>
+	</section>
+</body>
+</html>
